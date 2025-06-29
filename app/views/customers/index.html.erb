@@ -1,5 +1,12 @@
-<h1 class="title">All Customers</h1>
+<h1 class="title is-3 mb-5">All Customers</h1>
+
+<div class="buttons mb-4">
+  <%= link_to "View Alphabetized Customers", alphabetized_customers_path, class: "button is-link" %>
+  <%= link_to "View Customers Missing Email", missing_email_customers_path, class: "button is-warning" %>
+</div>
 
 <div class="columns is-multiline">
-  <%= render @customers %>
+  <% @customers.each do |customer| %>
+    <%= render "customer", customer: customer %>
+  <% end %>
 </div>

@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   resources :customers, only: [:index] do
     collection do
       get :alphabetized
+      get :missing_email
     end
   end
 
-  get 'customers/missing_email', to: 'customers#missing_email'
+  root "customers#index"
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
