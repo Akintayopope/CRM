@@ -1,6 +1,8 @@
-<h1 class="title is-3 mb-5">Customers Missing Email Addresses</h1>
+<div style="padding-left: 2rem; padding-right: 2rem; padding-top: 2rem;">
 
-<div class="buttons mb-4">
+<h1 class="title is-3 mb-4">Customers Missing Email Addresses</h1>
+
+<div class="buttons" style="margin-bottom: 2rem;">
   <%= link_to "View All Customers", root_path, class: "button is-link" %>
   <%= link_to "View Alphabetized Customers", alphabetized_customers_path, class: "button is-warning" %>
 </div>
@@ -10,3 +12,8 @@
     <%= render "customer", customer: customer %>
   <% end %>
 </div
+</div>
+
+<div class="mb-4">
+  <%= link_to "Back to Dashboard", admin_root_path, class: "button is-dark is-radiusless" %>
+</div>

@@ -1,12 +1,20 @@
-<h1 class="title is-3 mb-5">All Customers</h1>
+<div style="padding-left: 2rem; padding-right: 2rem; padding-top: 2rem;">
+  <h1 class="title is-3 mb-4">All Customers</h1>
 
-<div class="buttons mb-4">
-  <%= link_to "View Alphabetized Customers", alphabetized_customers_path, class: "button is-link" %>
-  <%= link_to "View Customers Missing Email", missing_email_customers_path, class: "button is-warning" %>
+  <div class="buttons" style="margin-bottom: 2rem;">
+    <%= link_to "View Alphabetized Customers", alphabetized_customers_path, class: "button is-link is-radiusless" %>
+    <%= link_to "View Customers Missing Email", missing_email_customers_path, class: "button is-warning is-radiusless" %>
+  </div>
+
+  <div class="columns is-multiline is-variable is-5">
+    <% @customers.each do |customer| %>
+      <%= render partial: "customer", locals: { customer: customer } %>
+    <% end %>
+
+  </div>
+
 </div>
 
-<div class="columns is-multiline">
-  <% @customers.each do |customer| %>
-    <%= render "customer", customer: customer %>
-  <% end %>
+<div class="mb-4">
+  <%= link_to "Back to Dashboard", admin_root_path, class: "button is-dark is-radiusless" %>
 </div>

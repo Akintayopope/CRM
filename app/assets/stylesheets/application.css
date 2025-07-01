@@ -8,3 +8,15 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/*
+ *= require bulma
+ *= require_tree .
+ *= require_self
+*/
+
+
+.card {
+  margin-bottom: 1.5rem;
+  margin-right: 1rem;
+}

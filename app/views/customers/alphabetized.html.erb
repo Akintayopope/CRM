@@ -1,10 +1,16 @@
+<div style="padding-left: 2rem; padding-right: 2rem; padding-top: 2rem;">
 <h1 class="title">All Customers (Alphabetized)</h1>
 
-<div class="buttons mb-4">
+<div class="buttons" style="margin-bottom: 2rem;">
   <%= link_to "View All Customers", root_path, class: "button is-primary" %>
   <%= link_to "View Customers Missing Email", missing_email_customers_path, class: "button is-warning" %>
 </div>
 
 <div class="columns is-multiline">
   <%= render @customers %>
+</div>
+</div>
+
+<div class="mb-4">
+  <%= link_to "Back to Dashboard", admin_root_path, class: "button is-dark is-radiusless" %>
 </div>
